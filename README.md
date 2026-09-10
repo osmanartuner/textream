@@ -16,7 +16,7 @@ Kişisel macOS teleprompter sürümü. [Orijinal Textream](https://github.com/f/
 ./script/test_preferences.sh
 ```
 
-İlk komut uygulamayı yerel olarak derler ve `~/Applications/TextreamPersonal.app` konumuna kurup açar. Codex Run düğmesi de aynı komutu kullanır. Uygulama kimliği `dev.osmanartuner.textream.personal` olduğundan orijinal Textream ile ayrı ayarlar kullanır. Bu yerel sürüm App Store veya Developer ID dağıtımı değildir.
+İlk komut uygulamayı yerel olarak derler ve `/Applications/Textream Personal.app` konumuna kurup açar. Uygulamalar klasöründeki Textream Personal simgesine çift tıklayarak da açabilirsiniz. Codex Run düğmesi aynı derleme komutunu kullanır. Uygulama kimliği `dev.osmanartuner.textream.personal` olduğundan ayarlar güncellemelerde korunur. Bu yerel sürüm App Store veya Developer ID dağıtımı değildir.
 
 İşlem ve doğrulama kaydı: [DEVELOPMENT_NOTES.md](DEVELOPMENT_NOTES.md). Aşağıdaki bölüm orijinal projenin dokümantasyonudur; indirme bağlantıları orijinal Textream sürümüne gider.
 

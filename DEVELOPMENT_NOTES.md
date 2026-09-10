@@ -49,3 +49,16 @@
 - `./script/test_preferences.sh`: mikrofonsuz tercih, geometri ve takip testleri. Yalnızca kendine ait geçici UserDefaults alanını kullanır.
 - Derleme günlüğü: `.build/personal/build.log`.
 - İsteğe bağlı universal DMG betiği: `Textream/build.sh`; bu çalışmada kullanılmadı.
+
+## Onaylanan logo ve doğrudan açılış — 10 Eylül 2026
+
+- Kullanıcı koyu grafit zeminli, turkuaz teleprompter simgesini onayladı. macOS `AppIcon.appiconset` içindeki 10 boyut güncellendi; About görünümü de bu ortak simgeyi kullanır. iOS simgeleri değişmedi.
+- Görsel yerleşik `image_gen` aracıyla üretildi. Özgün çıktı Codex'in generated_images alanında korundu; `sips` ile standart simge boyutlarına dönüştürüldü. Depodaki en büyük kaynak: `Textream/Textream/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png` (1024 × 1024, alfa kanallı).
+- Son üretim istemi: “Create a polished macOS app icon for Textream Personal: a dark graphite rounded-square tile with a bold turquoise teleprompter glyph, three horizontal reading lines and a small pointer highlighting the middle line. Simple, centered, crisp and recognizable at small sizes; subtle depth, no letters, no words, no watermark. Square 1024 by 1024 canvas, transparent outside the rounded tile, with standard macOS icon padding.”
+- Güncel kurulum yolu `/Applications/Textream Personal.app`. `script/build_and_run.sh` sonraki derlemelerde de bu konumu günceller. Bundle kimliği korunur: `dev.osmanartuner.textream.personal`.
+- Bu bilgisayarda `~/Desktop/Textream Personal.app` kısayolu güncel kurulum yoluna bağlandı. Önceki `~/Applications/TextreamPersonal.app` kopyası, iki bundle kimliği doğrulandıktan ve yeni kurulum açıldıktan sonra Çöp Sepeti'ne taşındı.
+- PASS — Release derlemesi tamamlandı; kurulu uygulamanın `codesign --verify --strict` kontrolü geçti. Derlenen ve kurulan `AppIcon.icns` dosyalarının SHA-256 değerleri aynı.
+- PASS — Finder'da masaüstü kısayolunun yeni simgesi görüldü. Textream süreci çalışmıyorken kısayola çift tıklandı; `/Applications/Textream Personal.app/Contents/MacOS/TextreamPersonal` süreci ve ana pencere açıldı.
+- PASS — Kayıtlı okuma dosyası uygulama arayüzünden yeniden açıldı. English (United States), 60 punto ve 1.3× satır aralığı yeni kurulumda doğrulandı. Uygulama bu dosya açık şekilde bırakıldı.
+- Bu değişiklik simge ve kurulum konumuyla sınırlı; önceki 59 davranış kontrolü yeniden çalıştırılmadı. Betik sözdizimi ve diff kontrolü geçti.
+- BEKLİYOR — Kullanıcının kaldırılmasını istediği orijinal `/Applications/Textream.app` (`dev.fka.textream`, root sahipliğinde) hâlâ mevcut. Finder üzerinden Çöp Sepeti'ne taşıma başlatıldı ve macOS yönetici doğrulaması bekleniyor. Bilgisayar kontrol aracı SecurityAgent erişimini güvenlik gerekçesiyle engelledi; kullanıcıdan Touch ID/parola doğrulamasını kendi ekranında tamamlaması istendi. Kaldırma tamamlanmış sayılmadı.

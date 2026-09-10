@@ -12,7 +12,7 @@ ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 APP_NAME="TextreamPersonal"
 BUNDLE_ID="dev.osmanartuner.textream.personal"
 BUILD_DIR="$ROOT_DIR/.build/personal"
-APP_BUNDLE="$HOME/Applications/$APP_NAME.app"
+APP_BUNDLE="/Applications/Textream Personal.app"
 
 if pgrep -x "$APP_NAME" >/dev/null; then
   osascript -e "tell application id \"$BUNDLE_ID\" to quit"
@@ -26,7 +26,7 @@ if pgrep -x "$APP_NAME" >/dev/null; then
   fi
 fi
 
-mkdir -p "$BUILD_DIR" "$HOME/Applications"
+mkdir -p "$BUILD_DIR"
 if ! xcodebuild \
   -project "$ROOT_DIR/Textream/Textream.xcodeproj" \
   -scheme Textream -configuration Release \
