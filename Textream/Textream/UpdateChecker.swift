@@ -10,7 +10,7 @@ import AppKit
 class UpdateChecker {
     static let shared = UpdateChecker()
 
-    private let repoOwner = "f"
+    private let repoOwner = "osmanartuner"
     private let repoName = "textream"
 
     private var currentVersion: String {

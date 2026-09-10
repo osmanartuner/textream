@@ -6,10 +6,10 @@ PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BUILD_DIR="$PROJECT_DIR/build/release"
 ARCHIVE_ARM="$BUILD_DIR/Textream-arm64.xcarchive"
 ARCHIVE_X86="$BUILD_DIR/Textream-x86_64.xcarchive"
-APP_NAME="Textream.app"
+APP_NAME="TextreamPersonal.app"
 OUTPUT_DIR="$BUILD_DIR/universal"
 OUTPUT_APP="$OUTPUT_DIR/$APP_NAME"
-DMG_NAME="Textream.dmg"
+DMG_NAME="TextreamPersonal.dmg"
 DMG_PATH="$BUILD_DIR/$DMG_NAME"
 DEVELOPER_ID_ENTITLEMENTS="$PROJECT_DIR/Textream/Textream-DeveloperID.entitlements"
 
@@ -106,7 +106,7 @@ if [ -n "${SIGNING_IDENTITY:-}" ]; then
     --force \
     --sign "$SIGNING_IDENTITY" \
     --timestamp \
-    --identifier dev.fka.textream.dmg \
+    --identifier dev.osmanartuner.textream.personal.dmg \
     "$DMG_PATH"
 
   codesign --verify --strict --verbose=2 "$DMG_PATH"

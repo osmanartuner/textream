@@ -494,9 +494,9 @@ class TextreamService: NSObject, ObservableObject {
         readText(text)
     }
 
-    // URL scheme handler: textream://read?text=Hello%20World
+    // URL scheme handler: textream-personal://read?text=Hello%20World
     func handleURL(_ url: URL) {
-        guard url.scheme == "textream" else { return }
+        guard url.scheme == "textream-personal" else { return }
 
         if url.host == "read" || url.path == "/read" {
             if let components = URLComponents(url: url, resolvingAgainstBaseURL: false),

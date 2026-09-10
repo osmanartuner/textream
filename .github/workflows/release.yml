@@ -14,6 +14,8 @@ concurrency:
 
 jobs:
   version:
+    # The personal fork builds locally; this is the upstream publishing pipeline.
+    if: github.repository == 'f/textream'
     runs-on: macos-15
     outputs:
       tag: ${{ steps.version.outputs.tag }}

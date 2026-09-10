@@ -1,3 +1,27 @@
+# Textream Personal
+
+Kişisel macOS teleprompter sürümü. [Orijinal Textream](https://github.com/f/textream) üzerine kuruludur; konuşmayı takip eden **Word Tracking** özelliğini kullanır.
+
+- Varsayılan görünüm taşınabilir bir penceredir. Üstteki **Move** alanından sürükleyin.
+- Pencereyi kenarlarından veya sağ alt tutamaktan boyutlandırın. Eski 500 punto genişlik sınırı kaldırılmıştır.
+- Üstteki **Aa / punto** düğmesinden yazıyı **14–200 punto** arasında, okuma sırasında da büyütün. Aynı kontrol Settings → Appearance içinde bulunur.
+- Aynı düğmedeki **Line Spacing** kontrolü satır aralığını **1.0–2.5×** arasında açar. **1.0×** eski aralığı korur.
+- Pencere konumu, boyutu, yazı tipi, punto, satır aralığı ve konuşma dili otomatik kaydedilir. Yeniden başlattığınızda korunur.
+- İngilizce okuma için **Settings → Guidance → Speech Language → English (United States)** seçilebilir.
+- Yanlış okuma veya kısa bir atlamadan sonra takip, yakındaki üç veya daha fazla net kelimeyi eşleştirerek yeniden yakalanır. Daha uzun bir gecikme için en az beş kelimelik belirgin bir ifade gerekir; sessizlikte ilerleme eklenmez.
+- Ekran dışında kalan satırların konumu da hesaplanır; büyük puntoda veya bir ifadeyi atlayınca takip görünmeyen satıra ulaşabilir.
+
+```bash
+./script/build_and_run.sh
+./script/test_preferences.sh
+```
+
+İlk komut uygulamayı yerel olarak derler ve `~/Applications/TextreamPersonal.app` konumuna kurup açar. Codex Run düğmesi de aynı komutu kullanır. Uygulama kimliği `dev.osmanartuner.textream.personal` olduğundan orijinal Textream ile ayrı ayarlar kullanır. Bu yerel sürüm App Store veya Developer ID dağıtımı değildir.
+
+İşlem ve doğrulama kaydı: [DEVELOPMENT_NOTES.md](DEVELOPMENT_NOTES.md). Aşağıdaki bölüm orijinal projenin dokümantasyonudur; indirme bağlantıları orijinal Textream sürümüne gider.
+
+---
+
 <p align="center">
   <img src="Textream/Textream/Assets.xcassets/AppIcon.appiconset/icon_256x256.png" width="128" height="128" alt="Textream icon">
 </p>
