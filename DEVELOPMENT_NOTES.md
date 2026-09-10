@@ -62,3 +62,15 @@
 - PASS — Kayıtlı okuma dosyası uygulama arayüzünden yeniden açıldı. English (United States), 60 punto ve 1.3× satır aralığı yeni kurulumda doğrulandı. Uygulama bu dosya açık şekilde bırakıldı.
 - Bu değişiklik simge ve kurulum konumuyla sınırlı; önceki 59 davranış kontrolü yeniden çalıştırılmadı. Betik sözdizimi ve diff kontrolü geçti.
 - BEKLİYOR — Kullanıcının kaldırılmasını istediği orijinal `/Applications/Textream.app` (`dev.fka.textream`, root sahipliğinde) hâlâ mevcut. Finder üzerinden Çöp Sepeti'ne taşıma başlatıldı ve macOS yönetici doğrulaması bekleniyor. Bilgisayar kontrol aracı SecurityAgent erişimini güvenlik gerekçesiyle engelledi; kullanıcıdan Touch ID/parola doğrulamasını kendi ekranında tamamlaması istendi. Kaldırma tamamlanmış sayılmadı.
+
+## Orijinal projeye katkılar — 10 Eylül 2026
+
+- Kullanıcı, isim değişikliği olmadan logo ve işlevsel geliştirmelerin orijinal projeye gönderilmesini açıkça onayladı. `upstream/master` yenilendi; taban hâlâ `2c02f3eee2d8eac238c10a20d3d0e4b021465656`.
+- [PR #119 — Improve speech tracking and macOS prompter readability](https://github.com/f/textream/pull/119): `contribute/macos-reading`, commit `1cedff71b754951fd5bf6e96083f43411c6ac56d`. Konuşma kurtarma, ekran dışındaki kelimelere kaydırma, kalıcı pencere, font ve satır aralığı kontrolleri; 17 dosya. İlgili açık katkılar #91, #93, #73 ve #68 açıklamada belirtildi.
+- [PR #120 — Propose a refreshed macOS app icon](https://github.com/f/textream/pull/120): `contribute/macos-icon`, commit `3ad9ea8403cd740bdbec0416f04c780ce0ee7000`. Yalnızca 10 macOS simge PNG'si. Açıklamada eski/yeni görseller ve OpenAI ile üretildiği bilgisi yer alıyor.
+- İki PR da `osmanartuner` hesabından `f/textream:master` hedefine, taslak olmayan OPEN durumda gönderildi ve GitHub API üzerinden doğrulandı. Bu kayıt anında kabul/merge gerçekleşmedi; CI kontrol sonucu yoktu.
+- Katkı dallarında uygulama adı Textream ve bundle kimliği `dev.fka.textream`. Kişisel ad, kimlik, kurulum betiği ve Codex yapılandırması eklenmedi. Orijinal imzalama, yayın, güncelleme ve iOS dosyalarının tabanla aynı olduğu kontrol edildi.
+- PASS — Katkı kodu dalında `./script/test_preferences.sh`: 59 kontrol. Her iki dal Apple Silicon macOS Release olarak, `CODE_SIGNING_ALLOWED=NO` ile başarıyla derlendi. Yalnızca kullanılmayan AppIntents metaverisi için derleyici uyarısı görüldü.
+- PASS — 10 simgenin boyutu asset kataloğuyla eşleşiyor. Yeni derlenen uygulamalar Textream adı ve orijinal bundle kimliğiyle üretildi. İki dalın diff kontrolü geçti.
+- Önceki kişisel sürümdeki arayüz testleri PR açıklamasında ayrı belirtildi; gerçek İngilizce ses, fiziksel harici ekran, Intel ve dağıtım imzası doğrulanmış sayılmadı. Yeni kurulum/Reset All için Floating Window ve 48 punto varsayılanı açıklamada belirtildi.
+- Katkılar `.build/contribution-code` ve `.build/contribution-icon` çalışma ağaçlarında hazırlandı. Kurulu Textream Personal uygulaması bu işlemde yeniden kurulmadı; kişisel dalın uygulama kodu değiştirilmedi.
